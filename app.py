@@ -11,7 +11,7 @@ import os
 # CONFIG
 
 st.set_page_config(page_title="PDF AI", layout="wide")
-st.title("📄 PDF AI Assistant")
+st.title("PDF AI Assistant")
 
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -170,12 +170,12 @@ if uploaded_file:
         with st.spinner("Understanding document..."):
             st.session_state.doc_memory = build_doc_memory(text)
 
-        st.success("PDF Loaded 🚀")
+        st.success("PDF Loaded and Processed!")
 
 # DOCUMENT VIEW
 
 if st.session_state.doc_memory:
-    st.subheader("📌 Document Understanding")
+    st.subheader("Document Understanding")
     st.write(st.session_state.doc_memory)
 
 # SUMMARY
@@ -183,10 +183,10 @@ if st.session_state.doc_memory:
 if st.session_state.full_text:
     if st.button("Generate Summary"):
         summary = generate_summary(st.session_state.full_text)
-        st.subheader("📖 Summary")
+        st.subheader("Summary")
         stream_text(summary)
 
-# Q&A ENGINE (FIXED ACCURACY)
+# Q&A ENGINE
 
 query = st.text_input("Ask anything:")
 
@@ -217,5 +217,5 @@ if query and st.session_state.vectorstore:
             st.session_state.last_query = query
             st.session_state.last_answer = response.content
 
-            st.subheader("💬 Answer")
+            st.subheader("Answer")
             stream_text(response.content)
