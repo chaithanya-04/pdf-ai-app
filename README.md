@@ -5,7 +5,7 @@ Built with Streamlit, LangChain, FAISS, and Groq LLMs.
 
 ---
 
-## 🚀 Why This Project?
+## Why This Project?
 
 Reading long PDFs — research papers, reports, notes — just to find one specific piece of information is slow and inefficient. PDF AI Assistant solves this by letting you upload a document once and then interact with it conversationally, getting instant, context-aware answers instead of reading the whole thing manually.
 
